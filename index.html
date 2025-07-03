@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚡ AI CODE BLASTER ⚡</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="background-effects">
+        <div class="floating-particles"></div>
+        <div class="electric-grid"></div>
+    </div>
+
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <h1 class="main-title">
+                <span class="lightning">⚡</span>
+                AI CODE BLASTER
+                <span class="lightning">⚡</span>
+            </h1>
+            <p class="subtitle">Summon your code from the coding multiverse!</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Prompt Input Section -->
+            <section class="prompt-section">
+                <div class="input-container">
+                    <div class="robot-assistant">
+                        <svg class="robot-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Robot Head -->
+                            <rect x="60" y="40" width="80" height="60" rx="10" fill="url(#robotGradient)" stroke="#00ffff" stroke-width="2"/>
+                            <!-- Eyes -->
+                            <circle cx="80" cy="60" r="8" fill="#ff0080" class="robot-eye"/>
+                            <circle cx="120" cy="60" r="8" fill="#ff0080" class="robot-eye"/>
+                            <!-- Mouth -->
+                            <rect x="90" y="75" width="20" height="8" rx="4" fill="#00ffff"/>
+                            <!-- Antenna -->
+                            <line x1="100" y1="40" x2="100" y2="20" stroke="#00ffff" stroke-width="3"/>
+                            <circle cx="100" cy="20" r="5" fill="#ff0080" class="antenna-light"/>
+                            <!-- Body -->
+                            <rect x="70" y="100" width="60" height="80" rx="8" fill="url(#robotGradient)" stroke="#00ffff" stroke-width="2"/>
+                            <!-- Arms -->
+                            <rect x="40" y="110" width="30" height="15" rx="7" fill="url(#robotGradient)" stroke="#00ffff" stroke-width="2"/>
+                            <rect x="130" y="110" width="30" height="15" rx="7" fill="url(#robotGradient)" stroke="#00ffff" stroke-width="2"/>
+                            <!-- Legs -->
+                            <rect x="80" y="180" width="15" height="20" rx="7" fill="url(#robotGradient)" stroke="#00ffff" stroke-width="2"/>
+                            <rect x="105" y="180" width="15" height="20" rx="7" fill="url(#robotGradient)" stroke="#00ffff" stroke-width="2"/>
+                            
+                            <defs>
+                                <linearGradient id="robotGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#1a1a2e"/>
+                                    <stop offset="100%" style="stop-color:#16213e"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <div class="speech-bubble">
+                            <span class="bubble-text">Ready to code! 🚀</span>
+                        </div>
+                    </div>
+                    
+                    <div class="input-wrapper">
+                        <textarea 
+                            id="promptInput" 
+                            placeholder="Enter your frontend idea... (e.g., 'Login Form with Glassmorphism')"
+                            class="prompt-textarea"
+                        ></textarea>
+                        <button id="generateBtn" class="generate-btn">
+                            <span class="btn-text">Generate 🔥</span>
+                            <div class="btn-effects"></div>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Loading Animation -->
+                <div id="loadingAnimation" class="loading-container hidden">
+                    <div class="fire-loader">
+                        <div class="fire-ball"></div>
+                        <div class="loading-text">Summoning code magic...</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Code Output Section -->
+            <section id="codeOutput" class="code-output hidden">
+                <h2 class="output-title">✨ Your Magical Code ✨</h2>
+                
+                <div class="code-cards">
+                    <!-- HTML Card -->
+                    <div class="code-card html-card">
+                        <div class="card-header">
+                            <h3>🌐 HTML</h3>
+                            <button class="copy-btn" data-type="html">
+                                <span>📋 Copy</span>
+                            </button>
+                        </div>
+                        <div class="code-content">
+                            <pre><code id="htmlCode" class="code-block"></code></pre>
+                        </div>
+                        <div class="card-particles"></div>
+                    </div>
+
+                    <!-- CSS Card -->
+                    <div class="code-card css-card">
+                        <div class="card-header">
+                            <h3>🎨 CSS</h3>
+                            <button class="copy-btn" data-type="css">
+                                <span>📋 Copy</span>
+                            </button>
+                        </div>
+                        <div class="code-content">
+                            <pre><code id="cssCode" class="code-block"></code></pre>
+                        </div>
+                        <div class="card-particles"></div>
+                    </div>
+
+                    <!-- JavaScript Card -->
+                    <div class="code-card js-card">
+                        <div class="card-header">
+                            <h3>⚡ JavaScript</h3>
+                            <button class="copy-btn" data-type="js">
+                                <span>📋 Copy</span>
+                            </button>
+                        </div>
+                        <div class="code-content">
+                            <pre><code id="jsCode" class="code-block"></code></pre>
+                        </div>
+                        <div class="card-particles"></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">Built with ❤️ by Shiv Jani</p>
+            <div class="social-links">
+                <a href="https://github.com/Jani-shiv" target="_blank" class="social-link">
+                    <span class="social-icon">🐙</span>
+                    GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/shiv-jani/" target="_blank" class="social-link">
+                    <span class="social-icon">💼</span>
+                    LinkedIn
+                </a>
+                <a href="https://www.instagram.com/jani._.712/" target="_blank" class="social-link">
+                    <span class="social-icon">📸</span>
+                    Instagram
+                </a>
+                <a href="mailto:janishiv712@gmail.com" class="social-link">
+                    <span class="social-icon">📧</span>
+                    Email
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Copy Success Notification -->
+    <div id="copyNotification" class="copy-notification hidden">
+        <span class="copy-emoji">🎉</span>
+        <span class="copy-text">Copy Successful!</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
